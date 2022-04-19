@@ -14,7 +14,7 @@
         let keyPlace = document.getElementById("keyPlace");
         let fullKey = key.concat(" ", mode);
         keyPlace.innerHTML = (fullKey);
-        chooseTempo();
+        console.log(chooseTempo());
         chooseTimeSignature();
         chooseChordProgression();
         //code goes here
@@ -36,7 +36,11 @@
     }
     function chooseTempo(){
         console.log("chooseTempo called");
-        //code goes here
+        let lowestBPM = 90;
+        let highestBPM = 140;
+        let difference = highestBPM - lowestBPM;
+        var tempo = Math.floor(Math.random() * difference) + lowestBPM;
+        return tempo;
     }
     function chooseTimeSignature(){
         console.log("chooseTimeSignature called");
