@@ -10,11 +10,16 @@
         console.log("createParameters called");
         let key = chooseKey();
         let mode = chooseMode();
+        let tempo = chooseTempo();
+
         console.log(key);
         let keyPlace = document.getElementById("keyPlace");
+        let tempoPlace = document.getElementById("tempoPlace");
+
         let fullKey = key.concat(" ", mode);
+
         keyPlace.innerHTML = (fullKey);
-        console.log(chooseTempo());
+        tempoPlace.innerHTML = (tempo + " BPM");
         chooseTimeSignature();
         chooseChordProgression();
         //code goes here
