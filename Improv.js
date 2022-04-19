@@ -11,15 +11,18 @@
         let key = chooseKey();
         let mode = chooseMode();
         let tempo = chooseTempo();
+        let timeSignature = chooseTimeSignature();
 
         console.log(key);
         let keyPlace = document.getElementById("keyPlace");
         let tempoPlace = document.getElementById("tempoPlace");
+        let timeSignaturePlace = document.getElementById("timeSignaturePlace");
 
         let fullKey = key.concat(" ", mode);
 
         keyPlace.innerHTML = (fullKey);
         tempoPlace.innerHTML = (tempo + " BPM");
+        timeSignaturePlace.innerHTML = (timeSignature);
         chooseTimeSignature();
         chooseChordProgression();
         //code goes here
@@ -49,6 +52,12 @@
     }
     function chooseTimeSignature(){
         console.log("chooseTimeSignature called");
+        const possibleTop = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        const possibleBottom = new Array(1, 2, 4, 8, 16);
+        let top = possibleTop[(Math.floor(Math.random() * possibleTop.length))];
+        let bottom = possibleBottom[(Math.floor(Math.random() * possibleBottom.length))];
+        var timeSignature = (top.toString()).concat("/", (bottom.toString()));
+        return timeSignature;
         //code goes here
     }
     function chooseChordProgression(){
