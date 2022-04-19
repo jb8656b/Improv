@@ -26,6 +26,43 @@
         var number = Math.floor(Math.random() * keys.length);
         console.log(number);
         let key = keys[number];
+        
+        // if(number == 0){
+        //     var key = "A";
+        // }
+        // if(number == 1){
+        //     var key = "Bb";
+        // }
+        // if(number == 2){
+        //     var key = "B";
+        // }
+        // if(number == 3){
+        //     var key = "C";
+        // }
+        // if(number == 4){
+        //     var key = "C#";
+        // }
+        // if(number == 5){
+        //     var key = "D";
+        // }
+        // if(number == 6){
+        //     var key = "Eb";
+        // }
+        // if(number == 7){
+        //     var key = "E";
+        // }
+        // if(number == 8){
+        //     var key = "F";
+        // }
+        // if(number == 9){
+        //     var key = "F#";
+        // }
+        // if(number == 10){
+        //     var key = "G";
+        // }
+        // if(number == 11){
+        //     var key = "Ab";
+        // }
         return key;
     }
     function chooseMode(){
