@@ -10,8 +10,15 @@
         console.log("createParameters called");
         let key = chooseKey();
         let mode = chooseMode();
+        if (mode == "major"){
+            var modeNumber = 0;
+        }
+        if (mode == "minor"){
+            var modeNumber = 1;
+        }
         let tempo = chooseTempo();
         let timeSignature = chooseTimeSignature();
+        let chordProgression = chooseChordProgression(modeNumber);
 
         console.log(key);
         let keyPlace = document.getElementById("keyPlace");
@@ -23,8 +30,6 @@
         keyPlace.innerHTML = (fullKey);
         tempoPlace.innerHTML = (tempo + " BPM");
         timeSignaturePlace.innerHTML = (timeSignature);
-        chooseTimeSignature();
-        chooseChordProgression();
         //code goes here
     }
     function chooseKey(){
@@ -58,10 +63,27 @@
         let bottom = possibleBottom[(Math.floor(Math.random() * possibleBottom.length))];
         var timeSignature = (top.toString()).concat("/", (bottom.toString()));
         return timeSignature;
-        //code goes here
     }
-    function chooseChordProgression(){
+    function chooseChord(mode){
+        //mode = 0 is major
+        //mode = 1 is minor
+        const majorChords = new Array("I", "ii", "iii", "IV", "V", "vi", "vii°");
+        const minorChords = new Array("i", "ii°", "III", "iv", "V", "VI", "VII");
+        var chord = "I";
+        if (mode == 0){
+            var chord = majorChords[(Math.floor(Math.random() * majorChords.length))];
+        }
+        if (mode == 1){
+            var chord = minorChords[(Math.floor(Math.random() * minorChords.length))];
+        }
+        return chord;
+    }
+    function chooseChordProgression(mode){
         console.log("chooseChordProgression called");
+        console.log(chooseChord(mode));
+        //mode = 0 is major
+        //mode = 1 is minor
+
         //code goes here
     }
 })();
