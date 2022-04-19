@@ -29,14 +29,9 @@
     }
     function chooseMode(){
         console.log("chooseMode called");
-        var number = Math.floor(Math.random() * 2);
-        console.log("mode: " + number);
-        if(number == 0){
-            var mode = "major";
-        }
-        if(number == 1){
-            var mode = "minor";
-        }
+        const modes = new Array("major", "minor");
+        var number = Math.floor(Math.random() * modes.length);
+        let mode = modes[number];
         return mode;
     }
     function chooseTempo(){
