@@ -5,6 +5,12 @@
         console.log("test");
         console.log("this is a sentence");
         createParameters();
+        
+        let resetButton = document.createElement("button");
+        resetButton.innerHTML = "Reset";
+        let mainContainer = document.getElementById("mainContainer");
+        mainContainer.appendChild(resetButton);
+        resetButton.addEventListener("click", createParameters);
       }
     function createParameters(){
         console.log("createParameters called");
