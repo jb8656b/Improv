@@ -81,9 +81,15 @@
     function chooseChordProgression(mode){
         console.log("chooseChordProgression called");
         console.log(chooseChord(mode));
+        var numberOfChords = 4;
+        const chordProgression = new Array();
+        for (let i = 0; i < numberOfChords; i++){
+            chordProgression.push(chooseChord(mode));
+        }
+        console.log("Chord Progression Array is: " + chordProgression);
         //mode = 0 is major
         //mode = 1 is minor
-
+        
         //code goes here
     }
 })();
