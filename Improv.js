@@ -70,8 +70,10 @@
     function chooseChord(mode){
         //mode = 0 is major
         //mode = 1 is minor
-        const majorChords = new Array("I", "ii", "iii", "IV", "V", "vi", "vii°");
-        const minorChords = new Array("i", "ii°", "III", "iv", "V", "VI", "VII");
+
+        // "\xB0" is a properly rendered degree sign
+        const majorChords = new Array("I", "ii", "iii", "IV", "V", "vi", "vii\xB0");
+        const minorChords = new Array("i", "ii\xB0", "III", "iv", "V", "VI", "VII");
         var chord = "I";
         if (mode == 0){
             var chord = majorChords[(Math.floor(Math.random() * majorChords.length))];
