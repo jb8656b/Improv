@@ -10,6 +10,7 @@
         console.log("createParameters called");
         let key = chooseKey();
         let mode = chooseMode();
+        //Hopefully, this is the only bit of spaghetti code in here
         if (mode == "major"){
             var modeNumber = 0;
         }
@@ -24,12 +25,14 @@
         let keyPlace = document.getElementById("keyPlace");
         let tempoPlace = document.getElementById("tempoPlace");
         let timeSignaturePlace = document.getElementById("timeSignaturePlace");
+        let chordProgressionPlace = document.getElementById("chordProgressionPlace");
 
         let fullKey = key.concat(" ", mode);
 
         keyPlace.innerHTML = (fullKey);
         tempoPlace.innerHTML = (tempo + " BPM");
         timeSignaturePlace.innerHTML = (timeSignature);
+        chordProgressionPlace.innerHTML = (chordProgression);
         //code goes here
     }
     function chooseKey(){
@@ -79,6 +82,8 @@
         return chord;
     }
     function chooseChordProgression(mode){
+        //mode = 0 is major
+        //mode = 1 is minor
         console.log("chooseChordProgression called");
         console.log(chooseChord(mode));
         var numberOfChords = 4;
@@ -87,9 +92,6 @@
             chordProgression.push(chooseChord(mode));
         }
         console.log("Chord Progression Array is: " + chordProgression);
-        //mode = 0 is major
-        //mode = 1 is minor
-        
-        //code goes here
+        return chordProgression;
     }
 })();
