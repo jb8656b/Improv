@@ -38,8 +38,7 @@
         keyPlace.innerHTML = (fullKey);
         tempoPlace.innerHTML = (tempo + " BPM");
         timeSignaturePlace.innerHTML = (timeSignature);
-        chordProgressionPlace.innerHTML = (chordProgression);
-        //code goes here
+        chordProgressionPlace.innerHTML = (chordProgression.join(", "));
     }
     function chooseKey(){
         console.log("chooseKey called");

@@ -1,19 +1,19 @@
 #mainContainer{
     width: 60%;
-    border: 2px solid blue;
+    border: 2px solid black;
     margin: 0 auto;
 }
 #keyPlace{
-    border: 2px solid black;
-}
-#tempoPlace{
     border: 2px solid red;
 }
+#tempoPlace{
+    border: 2px solid orange;
+}
 #timeSignaturePlace{
-    border: 2px solid purple;
+    border: 2px solid yellow;
 }
 #chordProgressionPlace{
-    border: 2px solid yellow;
+    border: 2px solid green;
 }
 .parameter{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, 
