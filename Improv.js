@@ -60,6 +60,8 @@
         return key;
     }
     function chooseMode(){
+        //Adding other modes requires changes elsewhere in the code
+        //due to proper spaghetti code
         console.log("chooseMode called");
         const modes = new Array("major", "minor");
         var number = Math.floor(Math.random() * modes.length);
