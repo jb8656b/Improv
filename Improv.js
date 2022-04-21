@@ -17,6 +17,7 @@
     }        
         let resetButton = document.createElement("button");
         resetButton.innerHTML = "Reset";
+        resetButton.setAttribute("id", "resetButton");
         let mainContainer = document.getElementById("mainContainer");
         mainContainer.appendChild(resetButton);
         resetButton.addEventListener("click", createParameters);
