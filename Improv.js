@@ -2,7 +2,7 @@
     "use strict";
     window.addEventListener("load", init);
     function init(){
-        
+
         createParameters();
 
         //Slider code
@@ -14,13 +14,13 @@
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
         output.innerHTML = this.value;
-        
+    }        
         let resetButton = document.createElement("button");
         resetButton.innerHTML = "Reset";
         let mainContainer = document.getElementById("mainContainer");
         mainContainer.appendChild(resetButton);
         resetButton.addEventListener("click", createParameters);
-}
+
       }
     function createParameters(){
         console.log("createParameters called");
