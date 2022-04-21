@@ -2,15 +2,25 @@
     "use strict";
     window.addEventListener("load", init);
     function init(){
-        console.log("test");
-        console.log("this is a sentence");
+        
         createParameters();
+
+        //Slider code
+
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("sliderNumber");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+        output.innerHTML = this.value;
         
         let resetButton = document.createElement("button");
         resetButton.innerHTML = "Reset";
         let mainContainer = document.getElementById("mainContainer");
         mainContainer.appendChild(resetButton);
         resetButton.addEventListener("click", createParameters);
+}
       }
     function createParameters(){
         console.log("createParameters called");
