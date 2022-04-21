@@ -25,7 +25,7 @@
         }
         let tempo = chooseTempo();
         let timeSignature = chooseTimeSignature();
-        let chordProgression = chooseChordProgression(modeNumber);
+        let chordProgression = chooseChordProgression(modeNumber, 4);
 
         console.log(key);
         let keyPlace = document.getElementById("keyPlace");
@@ -88,12 +88,12 @@
         }
         return chord;
     }
-    function chooseChordProgression(mode){
+    function chooseChordProgression(mode, numberOfChords){
         //mode = 0 is major
         //mode = 1 is minor
         console.log("chooseChordProgression called");
         console.log(chooseChord(mode));
-        var numberOfChords = 4;
+        // var numberOfChords = 4;
         const chordProgression = new Array();
         for (let i = 0; i < numberOfChords; i++){
             chordProgression.push(chooseChord(mode));
