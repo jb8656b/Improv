@@ -23,7 +23,7 @@
         if (mode == "minor"){
             var modeNumber = 1;
         }
-        let tempo = chooseTempo();
+        let tempo = chooseTempo(90, 140);
         let timeSignature = chooseTimeSignature();
         let chordProgression = chooseChordProgression(modeNumber, 4);
 
@@ -55,10 +55,10 @@
         let mode = modes[number];
         return mode;
     }
-    function chooseTempo(){
+    function chooseTempo(lowestBPM, highestBPM){
         console.log("chooseTempo called");
-        let lowestBPM = 90;
-        let highestBPM = 140;
+        // let lowestBPM = 90;
+        // let highestBPM = 140;
         let difference = highestBPM - lowestBPM;
         var tempo = Math.floor(Math.random() * difference) + lowestBPM;
         return tempo;
