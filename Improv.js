@@ -18,8 +18,11 @@
         let resetButton = document.createElement("button");
         resetButton.innerHTML = "Reset";
         resetButton.setAttribute("id", "resetButton");
+        resetButton.setAttribute("class", "center");
         let mainContainer = document.getElementById("mainContainer");
-        mainContainer.appendChild(resetButton);
+        let buttonContainer = document.getElementById("buttonContainer");
+        // mainContainer.appendChild(resetButton);
+        buttonContainer.appendChild(resetButton);
         resetButton.addEventListener("click", createParameters);
 
       }
