@@ -24,13 +24,14 @@
 }
 #buttonContainer{
     margin-top: 50px;
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-left: 40%;
+    margin-right: 40%;
     border: 5px solid red;
 }
 #resetButton{
     /* margin: auto; */
     padding: 10px;
+    width: 100%;
     /* position: absolute; */
     /* position: relative; */
     /* -ms-transform: translateY(-50%);
