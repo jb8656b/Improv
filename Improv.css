@@ -28,6 +28,10 @@
     margin-right: 40%;
     /* border: 5px solid red; */
 }
+#buttonContainer2{
+    margin-left: 40%;
+    margin-right: 40%;
+}
 #resetButton{
     /* margin: auto; */
     padding: 10px;
@@ -36,6 +40,13 @@
     /* position: relative; */
     /* -ms-transform: translateY(-50%);
     transform: translateY(-50%); */
+}
+#imageChangeButton{
+    padding: 10px;
+    width: 100%;
+}
+#image{
+    width: 100%;
 }
 #myRange{
     width: 100%;

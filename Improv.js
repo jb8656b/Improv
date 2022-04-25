@@ -5,6 +5,8 @@
 
         createParameters();
 
+        const images = new Array("rhythm0.jpg", "rhythm1.jpg", "rhythm2.jpg", "rhythm3.jpg", "rhythm4.jpg");
+
         //Slider code
 
         var slider = document.getElementById("myRange");
@@ -12,10 +14,27 @@
         output.innerHTML = slider.value; // Display the default slider value
 
         // Update the current slider value (each time you drag the slider handle)
+
+        var sliderValue = 30;
+
+        var imageChangeButton = document.createElement("button");
+        imageChangeButton.innerHTML = "Set Image Change Interval";
+        imageChangeButton.setAttribute("id", "imageChangeButton");
+        imageChangeButton.onclick = autoChangeImage(images, sliderValue);
+        // imageChangeButton.onclick = changeInterval(sliderValue);
+        var buttonContainer2 = document.getElementById("buttonContainer2");
+        buttonContainer2.setAttribute("class", "center");
+        buttonContainer2.appendChild(imageChangeButton);
+
+
         slider.oninput = function() {
-        output.innerHTML = this.value;
-        // createParameters();
-    }        
+            // imageChangeButton.onclick = autoChangeImage(images, sliderValue);
+            output.innerHTML = this.value;
+            sliderValue = this.value;
+            setTimeout(sliderValue);
+            console.log(this.value);
+            // createParameters();
+        }        
         let resetButton = document.createElement("button");
         resetButton.innerHTML = "Reset";
         resetButton.setAttribute("id", "resetButton");
@@ -117,5 +136,15 @@
         }
         console.log("Chord Progression Array is: " + chordProgression);
         return chordProgression;
+    }
+    function autoChangeImage(images, interval){
+        clearInterval(myInterval);
+        var myInterval = setInterval(function(){
+            console.log("Image Changed");
+            var i = Math.floor(Math.random() * images.length);
+            document.getElementById('image').src=images[i];
+            console.log("image " + i + " selected");
+            i++;
+        }, (interval * 1000));
     }
 })();
