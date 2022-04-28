@@ -5,7 +5,9 @@
 
         createParameters();
 
-        const images = new Array("rhythm0.jpg", "rhythm1.jpg", "rhythm2.jpg", "rhythm3.jpg", "rhythm4.jpg");
+        const images = new Array("rhythm0.png", "rhythm1.png", "rhythm2.png", 
+        "rhythm3.png", "rhythm4.png", "rhythm5.png", "rhythm6.png", "rhythm7.png", 
+        "rhythm8.png", "rhythm9.png");
 
         //Slider code
 
@@ -50,6 +52,8 @@
         // mainContainer.appendChild(resetButton);
         buttonContainer.appendChild(resetButton);
         resetButton.addEventListener("click", createParameters);
+
+        autoChangeImage(images, sliderValue);
 
       }
     function logToConsole(){
@@ -138,7 +142,6 @@
         //mode = 1 is minor
         console.log("chooseChordProgression called");
         console.log(chooseChord(mode));
-        // var numberOfChords = 4;
         const chordProgression = new Array();
         for (let i = 0; i < numberOfChords; i++){
             chordProgression.push(chooseChord(mode));
@@ -147,6 +150,10 @@
         return chordProgression;
     }
     function autoChangeImage(images, interval){
+        console.log("Image Changed");
+            var i = Math.floor(Math.random() * images.length);
+            document.getElementById('image').src=images[i];
+            console.log("image " + i + " selected");
         // if(myInterval == true){
         //     clearInterval(myInterval);
         //     console.log("cleared interval");
@@ -156,7 +163,6 @@
             var i = Math.floor(Math.random() * images.length);
             document.getElementById('image').src=images[i];
             console.log("image " + i + " selected");
-            i++;
         }, (interval * 1000));
         let imageChangeButton = document.getElementById("imageChangeButton");
         imageChangeButton.addEventListener("click", function(){
