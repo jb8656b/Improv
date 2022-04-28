@@ -18,10 +18,16 @@
         var sliderValue = 30;
 
         var imageChangeButton = document.createElement("button");
-        imageChangeButton.innerHTML = "Set Image Change Interval";
+        imageChangeButton.innerHTML = "Set Image Change Interval. \n (Currently " 
+        + sliderValue + " seconds)";
         imageChangeButton.setAttribute("id", "imageChangeButton");
-        imageChangeButton.onclick = autoChangeImage(images, sliderValue);
-        // imageChangeButton.onclick = changeInterval(sliderValue);
+        imageChangeButton.addEventListener("click", function(){
+            // clearInterval(myInterval);
+            autoChangeImage(images, sliderValue);
+            console.log("Image change speed changed to " + sliderValue);
+            imageChangeButton.innerHTML = "Set Image Change Interval. \n (Currently " 
+            + sliderValue + " seconds)";
+        });
         var buttonContainer2 = document.getElementById("buttonContainer2");
         buttonContainer2.setAttribute("class", "center");
         buttonContainer2.appendChild(imageChangeButton);
@@ -31,7 +37,7 @@
             // imageChangeButton.onclick = autoChangeImage(images, sliderValue);
             output.innerHTML = this.value;
             sliderValue = this.value;
-            setTimeout(sliderValue);
+            // setTimeout(sliderValue);
             console.log(this.value);
             // createParameters();
         }        
@@ -46,6 +52,9 @@
         resetButton.addEventListener("click", createParameters);
 
       }
+    function logToConsole(){
+        console.log("poop");
+    }
     function createParameters(){
         console.log("createParameters called");
         let key = chooseKey();
@@ -138,13 +147,21 @@
         return chordProgression;
     }
     function autoChangeImage(images, interval){
-        clearInterval(myInterval);
-        var myInterval = setInterval(function(){
+        // if(myInterval == true){
+        //     clearInterval(myInterval);
+        //     console.log("cleared interval");
+        // }
+        var myInterval = window.setInterval(function(){
             console.log("Image Changed");
             var i = Math.floor(Math.random() * images.length);
             document.getElementById('image').src=images[i];
             console.log("image " + i + " selected");
             i++;
         }, (interval * 1000));
+        let imageChangeButton = document.getElementById("imageChangeButton");
+        imageChangeButton.addEventListener("click", function(){
+            clearInterval(myInterval);
+            console.log("Interval should be cleared");
+        })
     }
 })();
