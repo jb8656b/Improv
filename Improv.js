@@ -9,7 +9,7 @@
         // "rhythm3.png", "rhythm4.png", "rhythm5.png", "rhythm6.png", "rhythm7.png", 
         // "rhythm8.png", "rhythm9.png");
 
-        const images = new Array("testImages/rhythm0.png");
+        const images = new Array("testImages/rhythm0.jpg");
 
         //Slider code
 
