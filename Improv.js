@@ -5,11 +5,11 @@
 
         createParameters();
 
-        // const images = new Array("rhythm0.png", "rhythm1.png", "rhythm2.png", 
-        // "rhythm3.png", "rhythm4.png", "rhythm5.png", "rhythm6.png", "rhythm7.png", 
-        // "rhythm8.png", "rhythm9.png");
+        const images = new Array("rhythm0.PNG", "rhythm1.PNG", "rhythm2.PNG", 
+        "rhythm3.PNG", "rhythm4.PNG", "rhythm5.PNG", "rhythm6.PNG", "rhythm7.PNG", 
+        "rhythm8.PNG", "rhythm9.PNG");
 
-        const images = new Array("testImages/rhythm0.jpg");
+        // const images = new Array("testImages/rhythm0.jpg");
 
         //Slider code
 
